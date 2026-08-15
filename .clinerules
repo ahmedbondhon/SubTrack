@@ -1,0 +1,21 @@
+# SubTrack Project Instructions
+
+- **Framework**: Spring Boot (3.x or 4.x) with Java (21 or 25)
+- **Architecture**: Strict MVC Architecture (Controller -> Service -> Repository -> Entity)
+- **Database**: H2 (In-Memory for Dev) with Spring Data JPA
+- **Frontend**: Thymeleaf with Bootstrap 5 (Server-side rendering)
+
+## Domain Model (`Subscription`)
+- `id`: Long (GeneratedValue)
+- `serviceName`: String (e.g., "Netflix", "AWS")
+- `cost`: Double or BigDecimal
+- `quantity`: Integer
+- `billingCycle`: String ("Weekly", "Monthly", "Annually")
+- `renewalDate`: LocalDate
+- `category`: String ("Entertainment", "Work", "Utilities")
+- `isTrial`: Boolean
+
+## Key Rules
+1. Calculate **Total Monthly Spend** and **Total Annual Spend** dynamically in the Service layer based on `cost`, `quantity`, and `billingCycle`.
+2. Renewal status alerts: Highlight subscriptions renewing in <= 3 days.
+3. UI must use Bootstrap 5 badges (Active, Trial, Canceled) and clean layout cards.

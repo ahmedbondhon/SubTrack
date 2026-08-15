@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription Form</title>
+</head>
+<body>
+<h1>Subscription Form</h1>
+<form th:action="@{/subscriptions/save}" th:object="${subscription}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" required />
+
+    <label>Category:</label>
+    <input type="text" th:field="*{category}" required />
+
+    <label>Price:</label>
+    <input type="number" step="0.01" th:field="*{price}" required />
+
+    <label>Billing Cycle:</label>
+    <select th:field="*{billingCycle}">
+        <option th:each="cycle : ${billingCycles}" th:value="${cycle}" th:text="${cycle}"></option>
+    </select>
+
+    <label>Renewal Date:</label>
+    <input type="date" th:field="*{renewalDate}" required />
+
+    <label>Active:</label>
+    <input type="checkbox" th:field="*{active}" />
+
+    <button type="submit">Save</button>
+</form>
+<a href="/">Back to Dashboard</a>
+</body>
+</html>
