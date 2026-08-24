@@ -1,0 +1,102 @@
+:root {
+    --ink: #17212b;
+    --muted: #65727e;
+    --paper: #f4f7f5;
+    --line: #dce6e1;
+    --accent: #146c5b;
+    --accent-dark: #0e5145;
+    --warm: #f2b84b;
+}
+
+body {
+    color: var(--ink);
+    background: var(--paper) !important;
+}
+
+.app-shell {
+    max-width: 1180px;
+}
+
+.page-heading {
+    border-bottom: 1px solid var(--line);
+}
+
+.page-heading h1 {
+    letter-spacing: 0;
+    font-weight: 700;
+}
+
+.card {
+    border-color: var(--line) !important;
+    border-radius: 8px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #ffffff 0%, #eef7f2 100%);
+}
+
+.stat-label {
+    color: var(--muted);
+    letter-spacing: .08em;
+}
+
+.stat-value {
+    color: var(--accent-dark);
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-bg: var(--accent-dark);
+    --bs-btn-hover-border-color: var(--accent-dark);
+}
+
+.btn-success {
+    --bs-btn-bg: var(--accent);
+    --bs-btn-border-color: var(--accent);
+    --bs-btn-hover-bg: var(--accent-dark);
+    --bs-btn-hover-border-color: var(--accent-dark);
+}
+
+.table thead th {
+    color: var(--muted);
+    font-size: .76rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.form-card {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.form-label {
+    color: var(--muted);
+    font-size: .86rem;
+    font-weight: 600;
+}
+
+.form-control,
+.form-select {
+    border-color: var(--line);
+    border-radius: 6px;
+    padding: .7rem .8rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 .2rem rgba(20, 108, 91, .15);
+}
+
+@media (max-width: 576px) {
+    .page-heading {
+        align-items: flex-start !important;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .page-heading .btn {
+        width: 100%;
+    }
+}
