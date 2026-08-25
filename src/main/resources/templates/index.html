@@ -14,7 +14,11 @@
             <h1 class="mb-1">SubTrack Dashboard</h1>
             <p class="text-muted mb-0">Track subscriptions, renewals, and your spend in one place.</p>
         </div>
-        <a class="btn btn-primary" th:href="@{/subscriptions/new}">Add New Subscription</a>
+        <div class="d-flex align-items-center gap-2">
+            <span class="text-muted small d-none d-md-inline" th:text="'Hello, ' + ${loggedInUser}">Hello, admin</span>
+            <a class="btn btn-primary" th:href="@{/subscriptions/new}">Add New Subscription</a>
+            <a class="btn btn-outline-secondary btn-logout" th:href="@{/logout}">Logout</a>
+        </div>
     </div>
 
     <div class="row g-3 mb-4">
